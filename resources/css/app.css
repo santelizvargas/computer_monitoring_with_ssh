@@ -1,0 +1,37 @@
+@import "components/navbar.css";
+@import "components/footer.css";
+@import "computers.css";
+@import "details.css";
+
+/* google font imports*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+/* General style */
+
+:root {
+    --golden-color: #b68d2c;
+    --black-color: #000;
+    --text-white: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial;
+}
+
+body {
+    background: url(/img/background.jpg) no-repeat;
+    background-size: cover;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-white);
+}
+
+.text-white {
+    color: var(--text-white);
+}

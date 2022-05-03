@@ -1,0 +1,20 @@
+nav {
+    background: #000 !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    padding: 0px 5%;
+    height: 80px;
+    width: 100%;
+    border-bottom: 1px solid var(--golden-color);
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0px 15px;
+}

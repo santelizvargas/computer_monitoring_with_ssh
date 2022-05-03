@@ -1,0 +1,112 @@
+@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap);
+nav {
+    background: #000 !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    padding: 0px 5%;
+    height: 80px;
+    width: 100%;
+    border-bottom: 1px solid var(--golden-color);
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0px 15px;
+}
+footer {
+    background-color: #000;
+    color: #fff;
+    height: 60px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    padding-top: 10px;
+    border-top: 1px solid var(--golden-color);
+}
+.__container--computers {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 30px;
+}
+
+.__container--computers div.__container--child {
+    width: 40%;
+}
+
+.__container--computers div.__container--child div {
+    margin: 20px;
+    border: 1px solid #000;
+    background-color: #000;
+    height: 200px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0px 0px 10px var(--golden-color);
+}
+
+.__container--child div h2 {
+    padding: 12px;
+    border-bottom: 1px solid var(--golden-color);
+}
+.__container--details {
+    height: calc(100vh - 160px);
+    width: 100%;
+    margin: 10px auto 10px auto;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.__container--details div {
+    width: 30%;
+    height: 200px;
+    background-color: var(--black-color);
+    border: 1px solid var(--black-color);
+    margin-bottom: 2%;
+    padding: 10px 20px;
+    border-radius: 7px;
+    box-shadow: 0px 0px 10px var(--golden-color);
+    overflow-y: scroll;
+    overflow-x: scroll;
+}
+/* google font imports*/
+
+/* General style */
+
+:root {
+    --golden-color: #b68d2c;
+    --black-color: #000;
+    --text-white: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial;
+}
+
+body {
+    background: url(/img/background.jpg) no-repeat;
+    background-size: cover;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-white);
+}
+
+.text-white {
+    color: var(--text-white);
+}
