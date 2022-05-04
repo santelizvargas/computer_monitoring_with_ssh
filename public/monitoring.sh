@@ -2,6 +2,7 @@
 
 command=$1
 
+
 if [ "$command" = "memory" ]; then
     free
 elif [ "$command" = "disk" ]; then
