@@ -68,7 +68,8 @@ footer {
     display: none;
 }
 
-.__container--details div {
+.__container--details textarea {
+    display: block;
     width: 30%;
     height: 200px;
     background-color: var(--black-color);
@@ -79,6 +80,8 @@ footer {
     box-shadow: 0px 0px 10px var(--golden-color);
     overflow-y: scroll;
     overflow-x: scroll;
+    color: #fff;
+    text-align: justify;
 }
 /* google font imports*/
 

@@ -4,9 +4,23 @@ namespace App\Http\Controllers;
 
 use App\Models\Computer;
 use Illuminate\Http\Request;
+use Symfony\Component\Process\Process;
+use Symfony\Component\Process\Exception\ProcessFailedException;
 
 class ComputerController extends Controller
 {
+    private array $commands = [
+        'memory',
+        'disk',
+        'ports',
+        'process',
+        'users',
+        'table',
+        'logs',
+        'read',
+        'ls'
+    ];
+
     /**
      * Display a listing of the resource.
      *
@@ -14,12 +28,12 @@ class ComputerController extends Controller
      */
     public function index()
     {
-        // $computers = Computer::all();
+        $computers = Computer::all();
 
         return view(
             'computer.index', 
             [
-                // 'computers' => $computers,
+                'computers' => $computers,
             ]
         );
     }
@@ -42,7 +56,15 @@ class ComputerController extends Controller
      */
     public function store(Request $request)
     {
-        Computer::create($request->only('name', 'ip', 'commands'));
+        $role = $request->role;
+
+        array_push($this->commands, $role);
+
+        Computer::create([
+            'name' => $request->name,
+            'ip' => $request->ip,
+            'commands' => $this->commands
+        ]);
 
         return redirect()->route('computers.index');
     }
@@ -53,11 +75,27 @@ class ComputerController extends Controller
      * @param  \App\Models\Computer  $computer
      * @return \Illuminate\Http\Response
      */
-    // public function show(Computer $computer)
-    public function show()
+    public function show(Computer $computer)
     {
-        // return view('computer.show', ['computer' => $computer]);
-        return view('computer.show');
+        $outputs = collect($computer->commands)
+            ->map(function($command) {
+                $process = new Process(['./monitoring.sh', $command]);
+
+                try {
+                    $process->mustRun();
+                    return $process->getOutput();
+                } catch (ProcessFailedException $exception) {
+                    return $exception->getMessage();
+                }
+            })
+            ->toArray();
+
+        // var_dump($outputs);
+
+        return view('computer.show', [
+            'computer' => $computer,
+            'outputs' => $outputs
+        ]);
     }
 
     /**
@@ -80,7 +118,19 @@ class ComputerController extends Controller
      */
     public function update(Request $request, Computer $computer)
     {
-        $computer->update($request->only('name', 'ip', 'commands'));
+        $commands = collect($computer->commands)
+            ->filter(function($command) use($request) {
+                return $command !== $request->oldRole;
+            })
+            ->toArray();
+
+        array_push($commands, $request->role);
+
+        $computer->update([
+            'name' => $request->name,
+            'ip' => $request->ip,
+            'commands' => $commands
+        ]);
 
         return redirect()->route('computers.index');
     }
