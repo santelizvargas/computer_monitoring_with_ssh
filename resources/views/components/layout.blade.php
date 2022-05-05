@@ -10,11 +10,18 @@
 </head>
 
 <body class="antialiased">
+    <div class="loader"></div>
     <x-navbar></x-navbar>
     <div class="container">
         {{ $slot }}
     </div>
     <x-footer></x-footer>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript">
+    $(window).load(function() {
+        $(".loader").fadeOut(1200);
+    });
+    </script>
 
 </html>
