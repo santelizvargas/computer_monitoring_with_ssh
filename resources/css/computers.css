@@ -1,11 +1,16 @@
 .__container--computers {
     display: flex;
-    justify-content: space-evenly;
-    margin-top: 30px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 160px);
+    margin-top: 10px;
+    padding-top: 20px;
+    overflow-x: scroll;
 }
 
 .__container--computers div.__container--child {
-    width: 40%;
+    width: 60%;
 }
 
 .__container--computers div.__container--child div {
@@ -14,11 +19,56 @@
     background-color: #000;
     height: 200px;
     text-align: center;
-    color: #fff;
+    color: var(--white-color);
     box-shadow: 0px 0px 10px var(--golden-color);
 }
 
-.__container--child div h2 {
-    padding: 12px;
-    border-bottom: 1px solid var(--golden-color);
+.__container--computers a#__create--computer {
+    height: 40px;
+    width: 200px;
+    padding: 10px;
+    margin: 20px auto;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0px 0px 10px var(--golden-color);
+}
+
+.__container--computers table {
+    width: 100%;
+    padding: 0px 13px;
+    text-align: center;
+    border-collapse: separate;
+    border-spacing: 0px 13px;
+    box-shadow: 0px 0px 5px var(--golden-color);
+    background: var(--black-color);
+    border-radius: 7px;
+}
+
+.__container--computers table td,
+th {
+    color: var(--white-color);
+    padding: 5px;
+    box-shadow: 0px 0px 5px var(--golden-color);
+}
+
+.__container--computers table td#__options {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.__container--computers table th {
+    background: #fff1;
+    color: var(--white-color);
+}
+
+.__container--computers table th:nth-child(1),
+.__container--computers table td:nth-child(1) {
+    border-radius: 50px 0px 0px 50px;
+}
+
+.__container--computers table th:nth-last-child(1),
+.__container--computers table td:nth-last-child(1) {
+    border-radius: 0px 50px 50px 0px;
 }
