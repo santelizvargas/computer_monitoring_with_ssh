@@ -7,15 +7,12 @@
     justify-content: space-evenly;
     flex-wrap: wrap;
     overflow-y: scroll;
+    scrollbar-width: none;
 }
 
-::-webkit-scrollbar {
-    display: none;
-}
-
-.__container--details textarea {
+.__container--details pre {
     display: block;
-    width: 30%;
+    width: 45%;
     height: 200px;
     background-color: var(--black-color);
     border: 1px solid var(--black-color);
@@ -27,4 +24,6 @@
     overflow-x: scroll;
     color: var(--white-color);
     text-align: justify;
+    scrollbar-width: none;
+    font-size: 13px;
 }

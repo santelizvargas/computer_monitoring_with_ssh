@@ -2,10 +2,9 @@
     <div class="__container--details text-white">
         @foreach ($computer->commands as $command)
             @if ($computer->commands[$loop->index] !== 'cliente')
-                <textarea readonly>
+                <pre>
                  {{ $outputs[$loop->index] }}
-            {{-- {{ $command }} --}}
-            </textarea>
+                </pre>
             @endif
         @endforeach
     </div>

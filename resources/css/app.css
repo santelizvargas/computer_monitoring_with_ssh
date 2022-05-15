@@ -28,6 +28,10 @@
     font-family: "Roboto", "Helvetica Neue", Helvetica, Arial;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 body {
     background: url(/img/background.jpg) no-repeat;
     background-size: cover;
