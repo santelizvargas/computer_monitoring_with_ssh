@@ -1,10 +1,12 @@
 <x-layout>
     <div class="__container--details text-white">
         @foreach ($computer->commands as $command)
-            <textarea  readonly>
-            {{ $outputs[$loop->index] }}
+            @if ($computer->commands[$loop->index] !== 'cliente')
+                <textarea readonly>
+                 {{ $outputs[$loop->index] }}
             {{-- {{ $command }} --}}
             </textarea>
+            @endif
         @endforeach
     </div>
 </x-layout>

@@ -1,0 +1,56 @@
+.__container--form--create {
+    height: calc(100vh - 160px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.__form--create {
+    height: calc(100vh - 250px);
+    width: 40%;
+    background-color: var(--black-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: var(--box-shadow);
+    color: var(--black-color);
+    border-radius: 10px;
+}
+
+.__form--create div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 15px;
+}
+
+.__form--create div input {
+    width: 60%;
+    height: 30px;
+    border: none;
+    border-radius: 0px 5px 5px 0px;
+}
+
+.__form--create div input:focus {
+    outline: none;
+}
+
+.__form--create div span {
+    height: 30px;
+    width: 30px;
+    background: var(--white-color);
+    border-radius: 5px 0px 0px 5px;
+    text-align: center;
+    line-height: 30px;
+}
+
+.__form--create button {
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+    background: none;
+    color: var(--white-color);
+    border: none;
+    box-shadow: var(--box-shadow);
+}

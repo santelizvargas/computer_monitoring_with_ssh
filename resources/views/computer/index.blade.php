@@ -11,6 +11,9 @@
                             Ip
                         </th>
                         <th>
+                            Role
+                        </th>
+                        <th>
                             Options
                         </th>
                     </tr>
@@ -27,6 +30,9 @@
                                 <td>
                                     <i class="bi bi-globe2"></i> {{ $computer->ip }}
                                 </td>
+                                <td>
+                                    <i class="bi bi-hammer"></i> {{ $computer->role }}
+                                </td>
                                 <td id="__options">
                                     <a href="{{ route('computers.show', $computer->id) }}" name="show">
                                         <i class="bi bi-eye-fill"></i> See
@@ -39,7 +45,7 @@
                             </a>
                         </tr>
                     @empty
-                        <td colspan="3">
+                        <td colspan="4">
                             no hay maquinas
                         </td>
                     @endforelse

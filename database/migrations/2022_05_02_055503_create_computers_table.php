@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name')->unique();
             $table->string('ip')->unique();
+            $table->string('role')->notNull();
             $table->string('commands')->notNull();
             $table->timestamps();
         });

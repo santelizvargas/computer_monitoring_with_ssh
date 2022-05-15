@@ -8,7 +8,7 @@ if [ "$command" = "memory" ]; then
 elif [ "$command" = "disk" ]; then
     df -h | awk '{print $4}'
 elif [ "$command" = "ip" ]; then
-    ifconfig
+    echo ifconfig >> "info.log"
 elif [ "$command" = "ports" ]; then
     netstat -lt && netstat -lu
 elif [ "$command" = "process" ]; then

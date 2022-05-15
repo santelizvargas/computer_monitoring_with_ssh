@@ -63,6 +63,7 @@ class ComputerController extends Controller
         Computer::create([
             'name' => $request->name,
             'ip' => $request->ip,
+            'role' => $role,
             'commands' => $this->commands
         ]);
 

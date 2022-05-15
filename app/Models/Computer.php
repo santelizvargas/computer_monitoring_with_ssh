@@ -13,6 +13,7 @@ class Computer extends Model
     protected $fillable = [
         'name',
         'ip',
+        'role',
         'commands'
     ];
 

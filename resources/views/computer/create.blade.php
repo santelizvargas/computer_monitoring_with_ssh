@@ -1,18 +1,26 @@
 <x-layout title="Computers">
-    <form 
-        action="{{ route('computers.store') }}" 
-        method="post"
-    >
-        @csrf
+    <div class="__container--form--create">
+        <form action="{{ route('computers.store') }}" method="post" class="__form--create">
+            @csrf
+            <div>
+                <span><i class="bi bi-pc-display-horizontal"></i></span>
+                <input type="text" name="name" id="name" required>
+            </div>
 
-        <input type="text" name="name" id="name">
+            <div>
+                <span><i class="bi bi-globe2"></i></span>
+                <input type="text" name="ip" id="ip" required>
+            </div>
 
-        <input type="text" name="ip" id="ip">
+            <div>
+                <span><i class="bi bi-hammer"></i></span>
+                <input type="text" name="role" id="role" required>
+            </div>
 
-        <input type="text" name="role" id="role">
+            <button type="submit">
+                Send
+            </button>
+        </form>
+    </div>
 
-        <button type="submit">
-            Send
-        </button>
-    </form>
 </x-layout>
