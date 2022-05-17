@@ -79,8 +79,8 @@ class ComputerController extends Controller
     public function show(Computer $computer)
     {
         $outputs = collect($computer->commands)
-            ->map(function($command) {
-                $process = new Process(['./monitoring.sh', $command]);
+            ->map(function($command) use($computer) {
+                $process = new Process(['./monitoring.sh', $computer->ip, $command]);
 
                 try {
                     $process->mustRun();
@@ -90,8 +90,6 @@ class ComputerController extends Controller
                 }
             })
             ->toArray();
-
-        // var_dump($outputs);
 
         return view('computer.show', [
             'computer' => $computer,
