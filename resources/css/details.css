@@ -10,6 +10,14 @@
     scrollbar-width: none;
 }
 
+.__container--details div:nth-child(1) {
+    width: 35%;
+}
+
+.__container--details div:nth-child(2) {
+    width: 55%;
+}
+
 
 /* .__container--details pre {
     display: block;

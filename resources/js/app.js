@@ -6,17 +6,22 @@ $(window).load(function() {
 });
 
 // accordion 
-var acc = document.getElementsByClassName("__accordion");
+var accordion = document.getElementsByClassName("__accordion");
+var panel = document.getElementsByClassName("__panel");
 var i;
 
-for (i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function() {
+for (i = 0; i < accordion.length; i++) {
+    accordion[i].addEventListener("click", function() {
         this.classList.toggle("active");
         var panel = this.nextElementSibling;
         if (panel.style.maxHeight) {
             panel.style.maxHeight = null;
+            panel.classList.toggle("activePanel");
         } else {
             panel.style.maxHeight = panel.scrollHeight + "px";
+            panel.classList.toggle("activePanel");
         }
+
     });
+
 }
