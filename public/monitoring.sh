@@ -1,9 +1,9 @@
 #!/bin/bash
 
-ip=$1
-command=$2
+# ip=$1
+command=$1
 
-ssh root@$ip bash -c "'
+# ssh root@$ip bash -c "'
     if [ "$command" = "memory" ]; then
         free
     elif [ "$command" = "disk" ]; then
@@ -27,7 +27,7 @@ ssh root@$ip bash -c "'
     else
         echo $command
     fi
-'"
+# '"
 
 
 

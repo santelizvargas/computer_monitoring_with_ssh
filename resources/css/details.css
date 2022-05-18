@@ -10,7 +10,8 @@
     scrollbar-width: none;
 }
 
-.__container--details pre {
+
+/* .__container--details pre {
     display: block;
     width: 45%;
     height: 200px;
@@ -26,4 +27,4 @@
     text-align: justify;
     scrollbar-width: none;
     font-size: 13px;
-}
+} */

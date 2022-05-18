@@ -143,7 +143,8 @@ th {
     scrollbar-width: none;
 }
 
-.__container--details pre {
+
+/* .__container--details pre {
     display: block;
     width: 45%;
     height: 200px;
@@ -159,7 +160,7 @@ th {
     text-align: justify;
     scrollbar-width: none;
     font-size: 13px;
-}
+} */
 .__container--form--create {
     height: calc(100vh - 160px);
     display: flex;
@@ -216,6 +217,58 @@ th {
     border: none;
     box-shadow: var(--box-shadow);
 }
+/* Style the buttons that are used to open and close the accordion panel */
+
+.__accordion {
+    background-color: var(--black-color);
+    box-shadow: var(--box-shadow);
+    display: block;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 45%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    margin-bottom: 15px;
+}
+
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+
+.active,
+.__accordion:hover {
+    background-color: var(--black-color);
+    box-shadow: var(--box-shadow-white);
+}
+
+
+/* Style the accordion panel. Note: hidden by default */
+
+.__panel {
+    padding: 0 18px;
+    width: 45%;
+    background: var(--black-color);
+    box-shadow: var(--box-shadow);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.__accordion:after {
+    content: '\02795';
+    /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2796";
+    /* Unicode character for "minus" sign (-) */
+}
 /* google font imports*/
 
 /* bootstrap icons */
@@ -226,7 +279,9 @@ th {
     --golden-color: #b68d2c;
     --black-color: #000;
     --white-color: #fff;
+    --blue-color: #00f;
     --box-shadow: 0px 0px 10px var(--golden-color);
+    --box-shadow-white: 0px 0px 10px var(--white-color);
 }
 
 * {

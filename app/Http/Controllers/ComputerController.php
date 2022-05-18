@@ -80,7 +80,8 @@ class ComputerController extends Controller
     {
         $outputs = collect($computer->commands)
             ->map(function($command) use($computer) {
-                $process = new Process(['./monitoring.sh', $computer->ip, $command]);
+                // $process = new Process(['./monitoring.sh', $computer->ip, $command]);
+                $process = new Process(['./monitoring.sh', $command]);
 
                 try {
                     $process->mustRun();
