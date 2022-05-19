@@ -18,10 +18,10 @@ command=$1
         last | head --lines=10
     elif [ "$command" = "table" ]; then
         netstat -nr
-    # elif [ "$command" = "logs" ]; then
-    #     cat /var/log/kern.log | head --lines=10 > ./logs/"logs - $ip".log
-    # elif [ "$command" = "read" ]; then
-    #     cat ./logs/"logs - $ip".log
+    elif [ "$command" = "logs" ]; then
+        cat /var/log/remote/`ssh -n root@$ip hostname`/rsyslogd.log
+    elif [ "$command" = "read" ]; then
+        cat ./logs/"logs - $ip".log
     elif [ "$command" = "ls" ]; then
         ls -al
     else

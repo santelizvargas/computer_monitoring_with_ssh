@@ -3,6 +3,9 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use App\Models\Computer;
+use Symfony\Component\Process\Process;
+use Symfony\Component\Process\Exception\ProcessFailedException;
 
 class LogsCommand extends Command
 {
@@ -27,7 +30,16 @@ class LogsCommand extends Command
      */
     public function handle()
     {
-        file_put_contents('info.log', "Every 5 seconds" . now());
+        Computer::all()->foreach(function($computer) {
+            $process = new Process(['./monitoring.sh', $computer->ip, 'logs']);
+
+            try {
+                $process->mustRun();
+                $computer->logs->attach($process->getOutput());
+            } catch (ProcessFailedException $exception) {
+                echo $exception->getMessage();
+            }
+        });
         return 0;
     }
 }

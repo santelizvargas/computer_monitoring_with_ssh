@@ -32,7 +32,7 @@
     border-radius: 10px;
     text-align: center;
     font-weight: bold;
-    box-shadow: 0px 0px 10px var(--golden-color);
+    box-shadow: var(--box-shadow);
 }
 
 .__container--computers table {
@@ -50,7 +50,7 @@
 th {
     color: var(--white-color);
     padding: 5px;
-    box-shadow: 0px 0px 5px var(--golden-color);
+    box-shadow: var(--box-shadow);
 }
 
 .__container--computers table td#__options {

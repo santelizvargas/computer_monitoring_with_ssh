@@ -1,8 +1,10 @@
 <x-layout>
     <div class="__container--details text-white">
-       <div> {{ $computer->name}}
+       <div id="__data--computer"> 
+        {{ $computer->name}}
         {{ $computer->ip}}
         {{ $computer->role}}
+
        </div>
     
         <div>

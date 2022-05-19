@@ -16,6 +16,16 @@
 
 .__container--details div:nth-child(2) {
     width: 55%;
+    float: right;
+}
+
+#__data--computer {
+    background: var(--black-color);
+    height: 200px;
+    margin-top: 15px;
+    border-radius: 7px;
+    box-shadow: var(--box-shadow);
+    text-align: center;
 }
 
 

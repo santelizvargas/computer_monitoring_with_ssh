@@ -15,7 +15,7 @@ class Kernel extends ConsoleKernel
      */
     protected function shortSchedule(\Spatie\ShortSchedule\ShortSchedule $shortSchedule)
     {
-        $shortSchedule->exec('./monitoring 1 ip')
+        $shortSchedule->command('command:logs')
             ->everySeconds(5);
     }
 
