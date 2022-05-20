@@ -37,7 +37,7 @@
 }
 
 body {
-    background: url(/img/background.jpg) no-repeat;
+    background: url(/img/background2.jpg) no-repeat;
     background-size: cover;
 }
 
@@ -48,6 +48,10 @@ a {
 
 .text-white {
     color: var(--white-color);
+}
+
+.mb-1 {
+    margin-bottom: 10px;
 }
 
 

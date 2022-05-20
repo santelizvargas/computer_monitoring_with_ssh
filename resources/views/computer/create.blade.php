@@ -2,6 +2,7 @@
     <div class="__container--form--create">
         <form action="{{ route('computers.store') }}" method="post" class="__form--create">
             @csrf
+            <h2>New Computer</h2>
             <div>
                 <span><i class="bi bi-pc-display-horizontal"></i></span>
                 <input type="text" name="name" id="name" required>

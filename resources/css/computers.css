@@ -32,6 +32,7 @@
     border-radius: 10px;
     text-align: center;
     font-weight: bold;
+    background: var(--black-color);
     box-shadow: var(--box-shadow);
 }
 

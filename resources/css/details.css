@@ -26,6 +26,15 @@
     border-radius: 7px;
     box-shadow: var(--box-shadow);
     text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-shadow: var(--box-shadow);
+}
+
+#__data--computer div:nth-child(1) {
+    border-right: 1px solid var(--white-color);
+    width: 60%;
 }
 
 

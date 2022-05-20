@@ -88,6 +88,7 @@ footer {
     border-radius: 10px;
     text-align: center;
     font-weight: bold;
+    background: var(--black-color);
     box-shadow: var(--box-shadow);
 }
 
@@ -157,6 +158,15 @@ th {
     border-radius: 7px;
     box-shadow: var(--box-shadow);
     text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-shadow: var(--box-shadow);
+}
+
+#__data--computer div:nth-child(1) {
+    border-right: 1px solid var(--white-color);
+    width: 60%;
 }
 
 
@@ -209,6 +219,9 @@ th {
     height: 30px;
     border: none;
     border-radius: 0px 5px 5px 0px;
+    box-shadow: var(--box-shadow);
+    color: var(--black-color);
+    padding-left: 10px;
 }
 
 .__form--create div input:focus {
@@ -219,6 +232,8 @@ th {
     height: 30px;
     width: 30px;
     background: var(--white-color);
+    box-shadow: var(--box-shadow);
+    color: var(--black-color);
     border-radius: 5px 0px 0px 5px;
     text-align: center;
     line-height: 30px;
@@ -227,11 +242,18 @@ th {
 .__form--create button {
     width: 200px;
     height: 30px;
+    font-weight: bold;
     border-radius: 5px;
-    background: none;
+    background: var(--black-color);
     color: var(--white-color);
     border: none;
     box-shadow: var(--box-shadow);
+}
+
+.__form--create h2 {
+    color: var(--white-color);
+    font-weight: bold;
+    text-shadow: var(--box-shadow);
 }
 /* Style the buttons that are used to open and close the accordion panel */
 
@@ -331,7 +353,7 @@ th {
 }
 
 body {
-    background: url(/img/background.jpg) no-repeat;
+    background: url(/img/background2.jpg) no-repeat;
     background-size: cover;
 }
 
@@ -342,6 +364,10 @@ a {
 
 .text-white {
     color: var(--white-color);
+}
+
+.mb-1 {
+    margin-bottom: 10px;
 }
 
 

@@ -2,10 +2,12 @@
 
 namespace App\Console\Commands;
 
-use Illuminate\Console\Command;
 use App\Models\Computer;
 use Symfony\Component\Process\Process;
 use Symfony\Component\Process\Exception\ProcessFailedException;
+
+use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Storage;
 
 class LogsCommand extends Command
 {
@@ -14,14 +16,14 @@ class LogsCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'command:logs';
+    protected $signature = 'logs:save';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Save logs in info log file';
+    protected $description = 'Command description';
 
     /**
      * Execute the console command.
@@ -30,16 +32,23 @@ class LogsCommand extends Command
      */
     public function handle()
     {
-        Computer::all()->foreach(function($computer) {
-            $process = new Process(['./monitoring.sh', $computer->ip, 'logs']);
 
-            try {
-                $process->mustRun();
-                $computer->logs->attach($process->getOutput());
-            } catch (ProcessFailedException $exception) {
-                echo $exception->getMessage();
-            }
-        });
-        return 0;
+        $process = new Process(['./monitoring.sh', 'logs']);
+        $process->mustRun();
+
+                Storage::append('archivo.txt', $process->getOutput());
+        // Computer::all()->foreach(function($computer) {
+                // $process = new Process(['./monitoring.sh', $computer->ip, 'logs']);
+                // $process = new Process(['./monitoring.sh', 'logs']);
+
+                // Storage::append('archivo.txt', $process->getOutput());
+    
+                // try {
+                //     $process->mustRun();
+                //     $computer->logs->attach($process->getOutput());
+                // } catch (ProcessFailedException $exception) {
+                //     echo $exception->getMessage();
+                // }
+            // });
     }
 }
