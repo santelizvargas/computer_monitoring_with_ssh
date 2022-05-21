@@ -3,6 +3,8 @@
 namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
+use App\Models\Computer;
+
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
 class Kernel extends ConsoleKernel
@@ -14,13 +16,9 @@ class Kernel extends ConsoleKernel
      * @param  \Illuminate\Console\Scheduling\Schedule  $schedule
      * @return void
      */
-    protected function schedule(Schedule $schedule)
+    protected function shortSchedule(\Spatie\ShortSchedule\ShortSchedule $shortSchedule)
     {
-        // $shortSchedule->exec('hola.sh')
-        //     ->everySeconds(5);
-
-        // $shortSchedule->command('logs:save')->everySeconds(5);
-        $schedule->command('logs:save')->everyMinute(1);
+        $shortSchedule->command('logs:save')->everySeconds(5);
     }
 
     /**

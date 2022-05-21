@@ -32,23 +32,10 @@ class LogsCommand extends Command
      */
     public function handle()
     {
-
-        $process = new Process(['./monitoring.sh', 'logs']);
-        $process->mustRun();
-
-                Storage::append('archivo.txt', $process->getOutput());
-        // Computer::all()->foreach(function($computer) {
-                // $process = new Process(['./monitoring.sh', $computer->ip, 'logs']);
-                // $process = new Process(['./monitoring.sh', 'logs']);
-
-                // Storage::append('archivo.txt', $process->getOutput());
-    
-                // try {
-                //     $process->mustRun();
-                //     $computer->logs->attach($process->getOutput());
-                // } catch (ProcessFailedException $exception) {
-                //     echo $exception->getMessage();
-                // }
-            // });
+        foreach(Computer::all() as $computer) {
+        $process = shell_exec('ifconfig');
+        Storage::append("archivo.txt", $process);
+        }
+               
     }
 }
