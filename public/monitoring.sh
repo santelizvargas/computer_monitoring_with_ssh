@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# ip=$1
-command=$1
+ip=$1
+command=$2
 
-# ssh root@$ip bash -c "'
+ssh root@$ip bash -c "'
     if [ "$command" = "memory" ]; then
         free
     elif [ "$command" = "disk" ]; then
@@ -19,15 +19,17 @@ command=$1
     elif [ "$command" = "table" ]; then
         netstat -nr
     elif [ "$command" = "logs" ]; then
-        cat /var/log/remote/`ssh -n root@$ip hostname`/rsyslogd.log
+        echo $command
     elif [ "$command" = "read" ]; then
-        cat ./logs/"logs - $ip".log
+        ls -l /var/log/remote
+    elif [ "$command" = "dhcp" ]; then
+        cat /etc/dhcp/dhcpd.conf
     elif [ "$command" = "ls" ]; then
         ls -al
     else
         echo $command
     fi
-# '"
+'"
 
 
 
