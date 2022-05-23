@@ -1,4 +1,4 @@
-<x-layout title="Computers" schedule="test()">
+<x-layout title="Computers">
     <div class="__container--form--create">
         <form action="{{ route('computers.store') }}" method="post" class="__form--create">
             @csrf

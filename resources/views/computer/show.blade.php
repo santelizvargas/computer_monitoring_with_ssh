@@ -16,10 +16,15 @@
                 @if ($computer->commands[$loop->index] !== 'cliente')
                     <button class="__accordion"> {{ $command }} </button>
                     <pre class="__panel">
-                 {{ $outputs[$loop->index] }}
-                </pre>
+                        {{ $outputs[$loop->index] }}
+                    </pre>
                 @endif
             @endforeach
+
+            <button class="__accordion">  Logs </button>
+            <pre class="__panel">
+                {{$logs->logs}}
+            </pre>
         </div>
 
     </div>

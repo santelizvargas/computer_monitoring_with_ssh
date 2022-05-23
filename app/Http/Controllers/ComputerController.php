@@ -93,9 +93,12 @@ class ComputerController extends Controller
             })
             ->toArray();
 
+        $logs = $computer->logs()->latest()->first();
+
         return view('computer.show', [
             'computer' => $computer,
-            'outputs' => $outputs
+            'outputs' => $outputs,
+            'logs' => $logs
         ]);
     }
 

@@ -1,11 +1,11 @@
 require('./bootstrap');
 
 // loading page
-$(window).load(function() {
-    $(".loader").fadeOut(1200);
-});
+// $(window).load(function() {
+//     $(".loader").fadeOut(1200);
+// });
 
-// accordion 
+//accordion
 var accordion = document.getElementsByClassName("__accordion");
 var panel = document.getElementsByClassName("__panel");
 var i;
@@ -25,22 +25,3 @@ for (i = 0; i < accordion.length; i++) {
     });
 
 }
-
-// short-schedule
-function test() {
-    $.ajax({
-        url: "public/fun_schedule.php",
-        success: function(result) {
-            $("div").text(result);
-        }
-    })
-}
-
-// function test() {
-//     $.ajax({
-//         url: "funcion.php",
-//         success: function(result) {
-//             $("div").text(result);
-//         }
-//     })
-// }
