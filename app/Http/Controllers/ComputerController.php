@@ -10,15 +10,14 @@ use Symfony\Component\Process\Exception\ProcessFailedException;
 class ComputerController extends Controller
 {
     private array $commands = [
+        'ip',
         'memory',
         'disk',
         'ports',
+        'connection',
         'process',
         'users',
-        'table',
-        'logs',
-        'read',
-        'ls'
+        'table'
     ];
 
     /**

@@ -12,9 +12,11 @@ else
     elif [ "$command" = "disk" ]; then
         df -h
     elif [ "$command" = "ip" ]; then
-        echo ifconfig >> "info.log"
+        ifconfig
     elif [ "$command" = "ports" ]; then
         netstat -lt && netstat -lu
+    elif [ "$command" = "connection" ]; then
+        netstat -a
     elif [ "$command" = "process" ]; then
         ps -aux | head --lines=10
     elif [ "$command" = "users" ]; then
@@ -26,6 +28,7 @@ else
     elif [ "$command" = "dns" ]; then
         cat /etc/bind/named.conf.local /etc/bind/named.conf.options
     else
+        echo "command not found check the command"
         echo $command
     fi
 '"

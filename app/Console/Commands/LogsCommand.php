@@ -24,7 +24,7 @@ class LogsCommand extends Command
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'commnd logs save with CRON shedule 5 seconds';
 
     /**
      * Execute the console command.
