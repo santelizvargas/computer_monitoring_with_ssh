@@ -34,7 +34,8 @@
     width: 100%;
     background: var(--black-color);
     max-height: 0;
-    overflow: hidden;
+    overflow-y: hidden;
+    overflow-x: scroll;
     transition: max-height 0.2s ease-out;
     border-radius: 0 0 7px 7px;
     visibility: hidden;

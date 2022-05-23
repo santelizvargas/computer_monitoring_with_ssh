@@ -4,7 +4,7 @@ ip=$1
 command=$2
 
 if [ "$command" = "logs" ]; then
-    cat /var/log/remote/`ssh -n root@$ip hostname`/sshd.log
+    cat /var/log/remote/`ssh -n root@$ip hostname`/CRON.log
 else
     ssh root@$ip bash -c "'
     if [ "$command" = "memory" ]; then
@@ -24,7 +24,7 @@ else
     elif [ "$command" = "dhcp" ]; then
         cat /etc/dhcp/dhcpd.conf
     elif [ "$command" = "dns" ]; then
-        cat /etc/bind/named.conf.local
+        cat /etc/bind/named.conf.local /etc/bind/named.conf.options
     else
         echo $command
     fi

@@ -2163,11 +2163,11 @@ module.exports = {
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // loading page
+// $(window).load(function() {
+//     $(".loader").fadeOut(1200);
+// });
+//accordion
 
-
-$(window).load(function () {
-  $(".loader").fadeOut(1200);
-}); // accordion 
 
 var accordion = document.getElementsByClassName("__accordion");
 var panel = document.getElementsByClassName("__panel");
